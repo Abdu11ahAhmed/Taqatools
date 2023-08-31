@@ -1,0 +1,25 @@
+{% comment %} {% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Invoices {% endblock %}
+
+{% block content %}
+  
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" >
+  </div>
+  <div class="form-group">
+    <label for="value">Value</label>
+    <input type="number" class="form-control" id="value" >
+  </div><br>
+    
+    <button class="btn btn-primary"  id="post">Add H1</button>
+<div id="output"></div>
+
+{% endblock %}
+
+
+{% block script %}
+  <script src="{% static 'accounting/invoices.js' %}"></script>
+{% endblock %} {% endcomment %}

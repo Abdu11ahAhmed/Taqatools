@@ -1,0 +1,141 @@
+{% extends 'base.html' %} {% block title %} Login {% endblock %}
+<!-- comment line   -->
+{% block content %}
+<!-- {% if user.is_authenticated %}
+<h3>{{ user.first_name }}! You Are Already Logged in!</h3>
+<br />
+<a href="{% url 'logout' %}">Logout</a>
+{% else %}
+<form method="post">
+    {% csrf_token %}
+    <div class="shadow p-3 mb-5 bg-white rounded">
+        <div>
+            <h3>Logssin</h3>
+        </div>
+        <br />
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input
+                type="text"
+            
+                name="username"
+                aria-describedby="emailHelp"
+            />
+            <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+                >Password</label
+            >
+            <input type="password" name="password" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endif %} -->
+<!-- <> -->
+
+<style>
+    * {
+        padding: 00;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body {
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+    }
+    nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .container {
+        max-width: unset;
+        padding: unset;
+        margin: unset;
+        margin-top: unset;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: url("/static/images/mainImage.jpg") no-repeat;
+        background-size: cover;
+    }
+    .container br {
+        display: none;
+    }
+    form {
+        min-height: 600px;
+        width: 450px;
+        padding: 0 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: rgba(56, 56, 56, 0.283);
+        backdrop-filter: blur(25px);
+        border-radius: 30px;
+        box-shadow: 0 30px 136px #1111116b;
+    }
+    form h1 {
+        color: white;
+    }
+    form input {
+        border: none;
+        outline: none;
+        background: transparent;
+        width: 100%;
+        color: white;
+        border-bottom: 1px solid #777878;
+        border-radius: 0px;
+        /* font-size: 20px; */
+        padding: 10px 10px;
+        margin: 20px 0 0 0;
+        transition: 0.5s border;
+    }
+    form input:focus {
+        border-bottom: 1px solid #fff;
+    }
+    button.LoginBtn {
+        margin: 30px auto;
+        width: 150px;
+        padding: 0.5rem 0;
+        /* font-size: 18px; */
+        border: 1px solid white;
+        color: white;
+        background: none;
+        transition: 0.5s color, 0.5s background, 0.5s box-shadow;
+    }
+    button.LoginBtn:hover {
+        color: black;
+        background: white;
+        box-shadow: 0 0 20px white;
+    }
+    .alert-dismissible {
+        padding-right: 3rem;
+        position: absolute;
+        top: 200px;
+        color: white;
+        background: #ffffff00;
+        backdrop-filter: blur(13px);
+    }
+</style>
+{% if user.is_authenticated %}
+<h3>{{ user.first_name }}! You Are Already Logged in!</h3>
+<br />
+<a href="{% url 'logout' %}">Logout</a>
+{% else %}
+<form method="post">
+    {% csrf_token %}
+    <h1>Login</h1>
+    <input type="text" name="username" placeholder="Enter your name" />
+    <input type="password" name="password" placeholder="Enter your password" />
+    <button type="submit" class="LoginBtn">Login</button>
+</form>
+{% endif %} {% endblock %}

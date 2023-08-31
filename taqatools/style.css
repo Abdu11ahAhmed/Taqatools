@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Averta CY";
+}
+.brands {
+    border: 1px solid red;
+    min-height: 100px;
+    width: 100%;
+}
+.brands .content {
+    border: 1px solid black;
+    min-height: 100px;
+    width: 1200px;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.brands .content a {
+    font-weight: bolder;
+    color: black;
+    text-transform: uppercase;
+    font-style: oblique;
+    text-decoration: none;
+}
+.brands .content a img {
+    height: auto;
+    width: 100px;
+    filter: grayscale(1);
+}
+@media screen and (max-width: 1270px) {
+    .brands .content {
+        width: 1000px;
+    }
+}
+@media screen and (max-width: 1040px) {
+    .brands .content {
+        width: 800px;
+    }
+    .brands .content a img{
+        width: 80px;
+    }
+}
+@media screen and (max-width: 870px){
+    .brands .content {
+        width: 570px;
+    }
+    .brands .content a {
+        font-size: 12px;
+    }
+    .brands .content a img{
+        width: 50px;
+    }
+}

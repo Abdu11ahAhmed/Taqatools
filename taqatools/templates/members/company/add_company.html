@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Add Company  {% endblock %}
+{% block content %}
+
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <h3>
+    Add Company 
+  </h3>
+  <br>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Add Company</button>
+  </form>
+
+  <button hidden type="button" id="category_modal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-co-category-modal">
+    Add Category
+  </button>
+
+  <div class="modal fade" id="add-co-category-modal" tabindex="-1" aria-labelledby="add-co-category-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="add-co-category-modal">Add Category</h5>
+          <button type="button" id="modal_close" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="{% url 'add_co_category' %}" method="post" name="add_co_category_form">
+            {% csrf_token %}
+            <label for="input_name">Name:</label>
+            <input type="text" class="form-control" id="input_name">
+            <label for="input_description">Description:</label>
+            <textarea name="description" class="form-control bm-5" id="input_description" cols="30" rows="10"></textarea>
+            <button type="submit" id="category_submit" class="btn btn-primary">Add Category</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<script src="{% static 'membersjs/add_company.js' %}"></script>
+
+{% endblock %}
